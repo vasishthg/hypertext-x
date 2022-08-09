@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Sushant Lok - Home</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="background:url(static/home-overlay.png)">
+  <!-- Sidebar -->
+  <div class="sidebar" data-barba="wrapper">
+    <a class="dclink">
+      <img src="{{url_for('static', filename='fb.svg')}}" alt="" style="max-width: 2.4em;">  
+    </a>
+    <br>
+    <br>
+    <br>
+    <a class="lilink">
+      <img src="{{url_for('static', filename='li.svg')}}" alt="" style="max-width: 2.4em;">  
+    </a>
+    <br>
+    <br>
+    <br>
+    <a class="instalink">
+      <img src="{{url_for('static', filename='in.svg')}}" alt="" style="max-width: 2.4em;">
+    </a>
+    <br>
+    <br>
+    <br>
+    <a class="ytlink">
+      <img src="{{url_for('static', filename='yt.svg')}}" alt="" style="max-width: 2.4em;">
+    </a>
+  </div> 
+    <!-- Main -->
+  <main>
+    <h1 class="welcome"><img src="{{url_for('static', filename='logo.svg')}}" style="max-width: 3em; margin-top: -1em;" alt=""><span style="font-weight: 500; float:right; margin-right:1em; cursor: pointer;" class="menyoo"><p id="menu" onclick="menuFunction()" style="z-index: 9;">Menu</p></span></h1>
+    <!-- Sidenav -->
+    <div class="sidenav" id="sidenav">
+      <div class="navlinks">
+        <p class="navlinka active" id="homesidebar">HOME</p><br>
+        <p class="navlinka" id="portalsidebar">PORTAL</p><br>
+        <p class="navlinka" id="registersidebar">ADMISSIONS</p><br>
+        <p class="navlinka" id="toursidebar">TOUR</p><br>
+        <p class="navlinka" id="contactsidebar" style="padding-bottom:1.5em;">CONTACT</p>
+        </div>
+        <div>
+          <p class="nav-no">964-330-8832</p>
+          <p class="nav-email" >info@dpssl.net</p>
+          <div class="nav-socials">
+          <a class="dclink" style="text-decoration: none;">
+            <img src="{{url_for('static', filename='fb.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+          </a>
+          <a class="fblink" style="text-decoration: none;">
+            <img src="{{url_for('static', filename='in.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+          </a>
+          <a class="instalink" style="text-decoration: none;">
+                  <img src="{{url_for('static', filename='yt.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+          </a>
+          <a class="instalink" style="text-decoration: none;">
+            <img src="{{url_for('static', filename='li.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+    </a>
+    
+          </div>
+      </div>
+    </div>
+    <br>
+    <center style="width: 80%; margin-top: 4%;">
+      <div class="container" style="position: absolute; top:50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+        <div class="mm">
+          <img src="{{ url_for('static', filename='imgs/1.png') }}" alt="" class="dimg">
+          <img src="{{ url_for('static', filename='imgs/2.png') }}" alt="" class="dimg">
+          <img src="{{ url_for('static', filename='imgs/3.png') }}" alt="" class="dimg">
+          <img src="{{ url_for('static', filename='imgs/4.png') }}" alt="" class="dimg">
+          <img src="{{ url_for('static', filename='imgs/5.png') }}" alt="" class="dimg">
+          <img src="{{ url_for('static', filename='imgs/6.png') }}" alt="" class="dimg">
+        </div>
+        <div class="n">
+          <img src="{{url_for('static', filename='dpstl.png')}}" style="max-width: 23em;" alt=""><br><p class="ebbubc">in pursuit of excellence</p>
+        </div>
+      </div>
+    </center>
+  </main>
+  <br>
+  <br>
+  <div class="News">
+    <h1 class="nhead" style="display: inline; vertical-align: middle;">NEWS | </h1>
+    <p style='font-size: 1.8em; display: inline; margin-left: 4em; '>Principal says "Nice". Nice becomes the most typed word By ThatsNoSun#9887. Big chungus meme amongus</p>
+    <a href=""><button class="vm">View All</button></a>
+  </div>
+  <br>
+  <br>
+  <center>
+  <div class="nut">
+    <h1 style="font-family: '2'; letter-spacing: 0.065em;"><u>DPSSL IN A NUTSHELL</u></h1>
+    <img src="{{ url_for('static', filename='nutshel.png') }}" class="nutimg" alt="">
+  </div>
+  </center>
+  <br>
+  <br>
+  
+  <div class="toppers">
+    <br>
+    <h1 class="th">DPS Sushant Lok - Class 12 Toppers</h1>
+    <div class="tm">
+      <center><br>
+      <p class="ttop"><img src="{{url_for('static', filename='logo.svg')}}" alt="" class="timg"> School Topper</p><br>
+      <p class="top-name">KIRTANA SINGH CHADDA</p>
+      <img src="{{url_for('static', filename='hqwe.svg')}}" alt="" class="hqwe">
+      <p style="font-size: 2em;">98%</p>
+    </center>
+    <br>
+    <div class="tpr">
+      <h4 style="font-weight: 400;">Science Stream Topper</h4>
+      <p class="top-name">SARTHAK MAHESHWARI</p>
+      <p style="font-size: 2em;">97.8%</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="tpr2">
+      <h4 style="font-weight: 400;">Commerce Stream Topper</h4>
+      <p class="top-name">KIRTANA SINGH CHADDA</p>
+      <p style="font-size: 2em;">98%</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="tpr">
+      <h4 style="font-weight: 400;">Humanities Stream Topper</h4>
+      <p class="top-name">YASHITA THAREJA</p>
+      <p style="font-size: 2em;">97.4%</p>
+    </div>
+  </div>
+  <br>
+  </div>
+  <footer id="footer"><br>
+    <img src="{{url_for('static', filename='logo2.svg')}}" alt="" class="logo2">
+    <img src="{{ url_for('static', filename='tel.svg') }}" alt="" class="dn"><p class="ftxt">96433 08834, 96433 08832</p><br><br>
+    <img src="{{ url_for('static', filename='mail.svg') }}" alt="" class="dn"><p class="ftxt">96433 08834, 96433 08832</p>
+    <center>
+      <p style="font-size: 1.5em;">B-Block, Sushant Lok Phase I, Sector 27, (Behind Max Hospital) Gurugram, Haryana 122009</p>
+    </center>
+  </footer>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+<script>
+  window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }});
+
+$(".menyoo").click(function(){
+  $("#sidenav").slideToggle();
+});
+
+
+</script>
+<script>
+  function menuFunction(){
+  var mentxt = document.getElementById("menu")
+  if (mentxt.innerHTML === "Menu"){
+    mentxt.innerHTML = "Close";
+  }
+  else{
+    mentxt.innerHTML = "Menu";
+  }
+}
+
+$("#toursidebar").click(function(){
+  window.open('https://dpssl.net/360/virtualtour.html')
+  event.preventDefault()
+});
+
+  $("#contactsidebar").click(function(){
+    window.location.replace('#footer')
+    $("#sidenav").slideToggle();
+    mentxt.innerHTML = "Menu";
+  })
+
+  $("#portalsidebar").click(function(){
+    window.location.replace('/login')
+    $("#sidenav").slideToggle();
+    mentxt.innerHTML = "Menu";
+  })
+</script>

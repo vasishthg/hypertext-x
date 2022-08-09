@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Sushant Lok - ERP</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="background:url('/static/bgg.png') !important;">
+    <div class="student-details">
+        <p class="portal-heading">Student Details</p>
+        <img src="{{url_for('static', filename='user.png')}}" class="details-img" alt="">
+        <p class="details-name">{{ details[0]['name'] }} <p class="details-name" style="display: block; margin-left: 4.5em; margin-top: -2.5em;">{{ details[0]['class'] }} - {{ details[0]['section'] }}<span class="secret">({{ secret }})</span></p></p>
+    </div>
+    <img src="{{url_for('static', filename='logo.svg')}}" alt="" style="position: fixed; bottom: 1em; right: 0em; max-width: 10em;">
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+<script>
+  window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }});
+
+$(".menyoo").click(function(){
+  $("#sidenav").slideToggle();
+});
+
+
+</script>
+<script>
+  function menuFunction(){
+  var mentxt = document.getElementById("menu")
+  if (mentxt.innerHTML === "Menu"){
+    mentxt.innerHTML = "Close";
+  }
+  else{
+    mentxt.innerHTML = "Menu";
+  }
+}
+
+$("#toursidebar").click(function(){
+  window.open('https://dpssl.net/360/virtualtour.html')
+  event.preventDefault()
+});
+
+  $("#contactsidebar").click(function(){
+    window.location.replace('#footer')
+    $("#sidenav").slideToggle();
+    mentxt.innerHTML = "Menu";
+  })
+</script>

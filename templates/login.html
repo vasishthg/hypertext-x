@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Sushant Lok - Login</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="background:url(static/home-overlay.png)">
+  <!-- Sidebar -->
+  <div class="sidebar" data-barba="wrapper">
+    <a class="dclink">
+      <img src="{{url_for('static', filename='fb.svg')}}" alt="" style="max-width: 2.4em;">  
+    </a>
+    <br>
+    <br>
+    <br>
+    <a class="lilink">
+      <img src="{{url_for('static', filename='li.svg')}}" alt="" style="max-width: 2.4em;">  
+    </a>
+    <br>
+    <br>
+    <br>
+    <a class="instalink">
+      <img src="{{url_for('static', filename='in.svg')}}" alt="" style="max-width: 2.4em;">
+    </a>
+    <br>
+    <br>
+    <br>
+    <a class="ytlink">
+      <img src="{{url_for('static', filename='yt.svg')}}" alt="" style="max-width: 2.4em;">
+    </a>
+  </div> 
+    <!-- Main -->
+  <main>
+    <h1 class="welcome"><img src="{{url_for('static', filename='logo.svg')}}" style="max-width: 3em; margin-top: -1em;" alt=""><span style="font-weight: 500; float:right; margin-right:1em; cursor: pointer;" class="menyoo"><p id="menu" onclick="menuFunction()" style="z-index: 9;">Menu</p></span></h1>
+    <!-- Sidenav -->
+    <div class="sidenav" id="sidenav">
+      <div class="navlinks">
+        <p class="navlinka active" id="homesidebar">HOME</p><br>
+        <p class="navlinka" id="portalsidebar">PORTAL</p><br>
+        <p class="navlinka" id="registersidebar">ADMISSIONS</p><br>
+        <p class="navlinka" id="toursidebar">TOUR</p><br>
+        <p class="navlinka" id="contactsidebar" style="padding-bottom:1.5em;">CONTACT</p>
+        </div>
+        <div>
+          <p class="nav-no">964-330-8832</p>
+          <p class="nav-email" >info@dpssl.net</p>
+          <div class="nav-socials">
+          <a class="dclink" style="text-decoration: none;">
+            <img src="{{url_for('static', filename='fb.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+          </a>
+          <a class="fblink" style="text-decoration: none;">
+            <img src="{{url_for('static', filename='in.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+          </a>
+          <a class="instalink" style="text-decoration: none;">
+                  <img src="{{url_for('static', filename='yt.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+          </a>
+          <a class="instalink" style="text-decoration: none;">
+            <img src="{{url_for('static', filename='li.svg')}}" alt="" style="max-width: 2.4em; margin-left: 2em; text-decoration:none">  
+    </a>
+    
+          </div>
+      </div>
+    </div>
+    <br>
+      <div class="container" style="position: absolute; top:50%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
+        <form action="" method="post" class="forum">
+            <label for="admno" class="label">Admission Number</label><br>
+            <input type="text" name="admno" class="inpoot" id=""><br><br>
+            <label for="admno" class="label">Password</label><br>
+            <input type="text" name="password" class="inpoot" id=""><br><br>
+            <input type="submit" value="LOGIN" class="vm" style="float: right;">
+        </form>
+            <img src="{{url_for('static', filename='plogin.svg')}}" style="float: right;max-width: 40em; margin-right: -14em;" alt="">
+    </div>
+  </main>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+<script>
+  window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }});
+
+$(".menyoo").click(function(){
+  $("#sidenav").slideToggle();
+});
+
+
+</script>
+<script>
+  function menuFunction(){
+  var mentxt = document.getElementById("menu")
+  if (mentxt.innerHTML === "Menu"){
+    mentxt.innerHTML = "Close";
+  }
+  else{
+    mentxt.innerHTML = "Menu";
+  }
+}
+
+$("#toursidebar").click(function(){
+  window.open('https://dpssl.net/360/virtualtour.html')
+  event.preventDefault()
+});
+
+  $("#contactsidebar").click(function(){
+    window.location.replace('#footer')
+    $("#sidenav").slideToggle();
+    mentxt.innerHTML = "Menu";
+  })
+  $("#portalsidebar").click(function(){
+    window.location.replace('/login')
+    $("#sidenav").slideToggle();
+    mentxt.innerHTML = "Menu";
+  })
+</script>
