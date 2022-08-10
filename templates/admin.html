@@ -11,12 +11,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body style="background:url('/static/bgg.png') !important;">
-    <div class="student-details">
-        <p class="portal-heading">Student Details</p>
-        <img src="{{url_for('static', filename='user.png')}}" class="details-img" alt="">
-        <p class="details-name">{{ details[0]['name'] }} <p class="details-name" style="display: block; margin-left: 4.5em; margin-top: -2.5em;">{{ details[0]['class'] }} - {{ details[0]['section'] }}<span class="secret">({{ secret }})</span></p></p>
-    </div>
-    <img src="{{url_for('static', filename='logo.svg')}}" alt="" style="position: fixed; bottom: 1em; right: 0em; max-width: 10em;">
+  <h2 class="admin-head">Admin Portal</h2>
+  <div class="admin-nav">
+    <a href="" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='notice.svg')}}" alt=""> Release New Notice</a><br><br>
+    <a href="" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='hw.svg')}}" alt=""> Post Homework</a><br><br>
+    <a href="" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='users.svg')}}" alt=""> Manage Users</a><br><br>
+  </div>
+    <main class="admin-main">
+      <h1 class="admin-title">Release new notice</h1>
+      <form action="" method="post"><br>
+        <label for="title"class='admin-label'>Notice Title:</label><br>
+        <input type="text" placeholder="Enter notice title" class="admin-input" name="title"><br><br>
+        <label for="content" class='admin-label'>Notice:</label><br>
+        <textarea type="textbox" placeholder="Enter notice content" class="admin-input2" name="content"></textarea><br><br>
+        <input class="vm" style="outline: none; border: none; max-width: 5em; max-height: 2.5em; float: right; margin-top: -2em; margin-right: 2em;" type="submit">
+      </form>
+      <br><br><br>
+    </main>
+    <img src="{{url_for('static', filename='logo.svg')}}" alt="" style="position: fixed; top: 5em; right: 1em; max-width: 6em;">
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -49,6 +61,10 @@ $("#toursidebar").click(function(){
   window.open('https://dpssl.net/360/virtualtour.html')
   event.preventDefault()
 });
+
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
 
   $("#contactsidebar").click(function(){
     window.location.replace('#footer')

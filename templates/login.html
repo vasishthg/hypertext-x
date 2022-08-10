@@ -37,7 +37,7 @@
   </div> 
     <!-- Main -->
   <main>
-    <h1 class="welcome"><img src="{{url_for('static', filename='logo.svg')}}" style="max-width: 3em; margin-top: -1em;" alt=""><span style="font-weight: 500; float:right; margin-right:1em; cursor: pointer;" class="menyoo"><p id="menu" onclick="menuFunction()" style="z-index: 9;">Menu</p></span></h1>
+    <h1 class="welcome"><img src="{{url_for('static', filename='logo.svg')}}" id="homeredir" style="max-width: 3em; margin-top: -1em;" alt=""><span style="font-weight: 500; float:right; margin-right:1em; cursor: pointer;" class="menyoo"><p id="menu" onclick="menuFunction()" style="z-index: 9;">Menu</p></span></h1>
     <!-- Sidenav -->
     <div class="sidenav" id="sidenav">
       <div class="navlinks">
@@ -122,4 +122,10 @@ $("#toursidebar").click(function(){
     $("#sidenav").slideToggle();
     mentxt.innerHTML = "Menu";
   })
+
+  $("#homeredir").click(function(){
+    window.location.replace('/')
+    event.preventDefault()
+  })
+  $("#homeredir").css("cursor", "pointer")
 </script>

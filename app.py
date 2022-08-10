@@ -1,7 +1,9 @@
+from operator import methodcaller
 from flask import Flask, render_template, request, session, url_for, redirect
 import mysql.connector
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
+import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "c073d0ed65f33a257b57c0df4d20e6865ef479e3d81ee95b124aeb60f5518484"
@@ -41,6 +43,7 @@ def login():
         errmsg= 'Invalid Data'
     return render_template("login.html", errmsg = errmsg)
 
+
 @app.route('/logout')
 def logout():
     # Remove session data, this will log the user out
@@ -63,6 +66,24 @@ def portal():
         if details[0]['section'] == "D" or details[0]['section'] == "d":
             secret = 'eez nuts'
         return render_template('portal.html', admno=session['admno'], details = details, secret = secret)
+    return redirect('/login')
+
+@app.route('/admin', methods=["GET", "POST"])
+def admin():
+    if 'loggedin' in session:
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cur.execute("SELECT * FROM users WHERE admno = %s", [session['admno']])
+        details = cur.fetchall()
+        role = details[0]['role']
+        if role == 'admin':
+            if request.method == "POST" and 'title' in request.form:
+                title = request.form.get('title')
+                content = request.form.get('content')
+                cur.execute("INSERT INTO notices VALUES(NULL, %s, %s, %s)", (title, content, datetime.date.today()))
+                mysql.connection.commit()
+            return render_template("admin.html", admno=session['admno'], details = details)
+        else:
+            return redirect("/")
     return redirect('/login')
 
 if "__main__" == __name__:
