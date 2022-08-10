@@ -1,4 +1,3 @@
-import secrets
 from flask import Flask, render_template, request, session, url_for, redirect
 import mysql.connector
 from flask_mysqldb import MySQL
@@ -28,19 +27,15 @@ def login():
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute('SELECT * FROM users WHERE admno = %s AND password = %s', (admno, password))
         account = cur.fetchone()
-        role = account['role']
-        if role == 'admin':
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['admno'] = account['admno']
-            session['role'] = account['role']
-            return redirect("/admin")
         if account:
+            role = account['role']
             session['loggedin'] = True
             session['id'] = account['id']
             session['admno'] = account['admno']
             session['name'] = account['name']
             session['section'] = account['section']
+            if role == 'admin':
+                return redirect('/admin')
             return redirect("/portal")
     else:
         errmsg= 'Invalid Data'
@@ -62,6 +57,9 @@ def portal():
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute("SELECT * FROM users WHERE admno = %s", [session['admno']])
         details = cur.fetchall()
+        role = details[0]['role']
+        if role == 'admin':
+            return redirect('/admin')
         if details[0]['section'] == "D" or details[0]['section'] == "d":
             secret = 'eez nuts'
         return render_template('portal.html', admno=session['admno'], details = details, secret = secret)

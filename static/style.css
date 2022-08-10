@@ -507,6 +507,33 @@ a:hover{
   transform: translateY(-50%);
 }
 
+.stat1{
+  width: 8em;
+  height: 8em;
+  margin-right: 8em;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.stat-name{
+  font-size: 1.4em;
+  word-wrap: normal;
+  width: 10em;
+  margin-left: -1em;
+}
+
+.stat1-data{
+  color: white;
+  align-items: center;
+  margin-top: 50%;
+  font-size: 1.4em;
+  transform: translateY(-50%);
+  font-family: '6';
+
+  text-align: center;
+}
+
 /* RESPONSIVE */
 @media screen and ( max-height: 715px ) { 
   .navlinks{
