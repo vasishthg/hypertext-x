@@ -108,30 +108,30 @@
     <div class="tm">
       <center><br>
       <p class="ttop"><img src="{{url_for('static', filename='logo.svg')}}" alt="" class="timg"> School Topper</p><br>
-      <p class="top-name">KIRTANA SINGH CHADDA</p>
+      <p class="top-name">SIMAR TANDON</p>
       <img src="{{url_for('static', filename='hqwe.svg')}}" alt="" class="hqwe">
-      <p style="font-size: 2em;">98%</p>
+      <p style="font-size: 2em;">100%</p>
     </center>
     <br>
     <div class="tpr">
       <h4 style="font-weight: 400;">Science Stream Topper</h4>
-      <p class="top-name">SARTHAK MAHESHWARI</p>
-      <p style="font-size: 2em;">97.8%</p>
+      <p class="top-name">AADI JAIN</p>
+      <p style="font-size: 2em;">99.7%</p>
     </div>
     <br>
     <br>
     <br>
     <div class="tpr2">
       <h4 style="font-weight: 400;">Commerce Stream Topper</h4>
-      <p class="top-name">KIRTANA SINGH CHADDA</p>
-      <p style="font-size: 2em;">98%</p>
+      <p class="top-name">SIMAR TANDON</p>
+      <p style="font-size: 2em;">100%</p>
     </div>
     <br>
     <br>
     <br>
     <div class="tpr">
       <h4 style="font-weight: 400;">Humanities Stream Topper</h4>
-      <p class="top-name">YASHITA THAREJA</p>
+      <p class="top-name">ADIT MAGOTRA</p>
       <p style="font-size: 2em;">97.4%</p>
     </div>
   </div>
@@ -140,7 +140,7 @@
   <footer id="footer"><br>
     <img src="{{url_for('static', filename='logo2.svg')}}" alt="" class="logo2">
     <img src="{{ url_for('static', filename='tel.svg') }}" alt="" class="dn"><p class="ftxt">96433 08834, 96433 08832</p><br><br>
-    <img src="{{ url_for('static', filename='mail.svg') }}" alt="" class="dn"><p class="ftxt">96433 08834, 96433 08832</p>
+    <img src="{{ url_for('static', filename='mail.svg') }}" alt="" class="dn"><p class="ftxt">info@dpssl.net</p><br><br>
     <center>
       <p style="font-size: 1.5em;">B-Block, Sushant Lok Phase I, Sector 27, (Behind Max Hospital) Gurugram, Haryana 122009</p>
     </center>
@@ -187,6 +187,6 @@ $("#toursidebar").click(function(){
   $("#portalsidebar").click(function(){
     window.location.replace('/login')
     $("#sidenav").slideToggle();
-    mentxt.innerHTML = "Menu";
+    document.getElementById("menu").innerHTML = "Menu";
   })
 </script>

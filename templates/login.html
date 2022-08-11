@@ -75,8 +75,10 @@
             <label for="admno" class="label">Password</label><br>
             <input type="text" name="password" class="inpoot" id=""><br><br>
             <input type="submit" value="LOGIN" class="vm" style="float: right;">
+          {{ errmsg }} <br>
+
         </form>
-            <img src="{{url_for('static', filename='plogin.svg')}}" style="float: right;max-width: 40em; margin-right: -14em;" alt="">
+            <img src="{{url_for('static', filename='plogin.svg')}}" class="eljogus" style="float: right;max-width: 40em; margin-right: -14em;" alt="">
     </div>
   </main>
 </body>

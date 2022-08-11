@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Sushant Lok - ERP</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.svg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body style="background:url('/static/bgg.png') !important;">
+  <h2 class="admin-head">Admin Portal</h2>
+  <div class="admin-nav">
+    <a href="/admin" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='users.svg')}}" alt="">Back to Admin</a><br><br>
+    <a href="/logout" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='logout.svg')}}" alt=""> Logout</a><br><br>
+  </div>
+    <main class="admin-main">
+        <div class="add">
+          <h1 class="admin-title">Manage {{ content['admno'] }}</h1>
+          <table>
+              <tr>
+                  <th class="manage-head">
+                      ID
+                    </th>
+                    <th class="manage-head">
+                        Admission No.
+                    </th>
+                    <th class="manage-head">
+                        Password
+                    </th>
+                    <th class="manage-head">
+                        Role
+                    </th>
+                    <th class="manage-head">
+                        Name
+                    </th>
+                    <th class="manage-head">
+                        Class
+                    </th>
+                    <th class="manage-head">
+                        Section
+                    </th>
+                </tr>
+                <tr>
+                    <td class="manage-head">
+                {{ content['id'] }}
+            </td>
+            <td class="manage-head">
+                {{ content['admno'] }}
+            </td>
+            <td class="manage-head">
+                {{ content['password'] }}
+            </td>
+            <td class="manage-head">
+                {{ content['role'] }}
+            </td>
+            <td class="manage-head">
+                {{ content['name'] }}
+            </td>
+            <td class="manage-head">
+                {{ content['class'] }}
+            </td>
+            <td class="manage-head">
+                {{ content['section'] }}
+            </td>
+        </tr>
+    </table>
+    <form action="" method="post">
+        <input type="text" name="update-pass" placeholder="Update Password" class="admin-input" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+        <input type="text" name="update-role" placeholder="Update Role (user/admin)" class="admin-input" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+        <input type="text" name="update-name" placeholder="Update Name" class="admin-input" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+        <input type="text" name="update-class" placeholder="Update Class" class="admin-input" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+        <input type="text" name="update-section" placeholder="Update Section" class="admin-input" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+        <input type="submit" value="Update User" class="vm" style="background: none; border: 1px solid black; color: black; margin-left: 5.2em;">
+    </form>
+        </div>
+      </div>
+    </main>
+    <img src="{{url_for('static', filename='logo.svg')}}" alt="" style="position: fixed; top: 5em; right: 1em; max-width: 6em;">
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+<script>
+  window.addEventListener("load", () => {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }});
+
+$(".menyoo").click(function(){
+  $("#sidenav").slideToggle();
+});
+
+
+</script>
+<script>
+  function menuFunction(){
+  var mentxt = document.getElementById("menu")
+  if (mentxt.innerHTML === "Menu"){
+    mentxt.innerHTML = "Close";
+  }
+  else{
+    mentxt.innerHTML = "Menu";
+  }
+}
+
+$("#toursidebar").click(function(){
+  window.open('https://dpssl.net/360/virtualtour.html')
+  event.preventDefault()
+});
+
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+
+  $("#contactsidebar").click(function(){
+    window.location.replace('#footer')
+    $("#sidenav").slideToggle();
+    mentxt.innerHTML = "Menu";
+  })
+</script>

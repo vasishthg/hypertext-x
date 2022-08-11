@@ -15,45 +15,44 @@
         <p class="portal-heading">Student Details</p>
         <br>
         <img src="{{url_for('static', filename='user.png')}}" class="details-img" alt="">
-        <p class="details-name">{{ details[0]['name'] }} <p class="details-name" style="display: block; margin-left: 5em; margin-top: -2em;">{{ details[0]['class'] }} - {{ details[0]['section'] }}<span class="secret">({{ secret }})</span></p></p>
+        <p class="details-name">{{ details[0]['name'] }} <p class="details-name" style="display: block; margin-left: 5em; margin-top: -2em;">{{ details[0]['class'] }} - {{ details[0]['section'] }}<span class="secret">{% if secret == "eez nuts" %}({{ secret }}){% endif %}</span></p></p>
+        <br><a href="/logout" class="details-name">Logout</a><br><br>
+        <div class="assignments">
+          <p class="portal-heading">Assignments</p>
+          <div class="stat1">
+            <p class="stat1-data">140</p><br>
+            <p class="stat-name">To Be Completed</p>
+          </div>
+          <div class="stat1">
+            <p class="stat1-data">140</p><br>
+            <p class="stat-name">To Be Completed</p>
+          </div>
+          <div class="stat1">
+            <p class="stat1-data">140</p><br>
+            <p class="stat-name">To Be Completed</p>
+          </div>
+          <br>
+          <br>
+          <div class="all-homeworks">
+          {% for homework in homework %}
+          <div class="homework">
+            <h1 class="date-hw">{{ homework['subject'] }}</h1>
+            <p class="title-hw">&ThickSpace;&ThickSpace; {{ homework['title'] }}</p>
+          </div>
+          {% endfor %}
+          </div>
+      </div>
     </div>
     <div class="notices">
         <p class="portal-heading">Notices</p>
         <br>
+        {% for notices in notices %}
+        <a href="/notices/{{ notices['id'] }}">
         <div class="notice">
-            <h1 class="date-notice">24 July</h1>
-            <p class="title-notice">&ThickSpace;&ThickSpace; Update: Your free trial of breathing has expired</p>
-        </div><br><br>
-        <div class="notice">
-            <h1 class="date-notice">24 July</h1>
-            <p class="title-notice">&ThickSpace;&ThickSpace; Update: Your free trial of breathing has expired</p>
-        </div><br><br>
-        <div class="notice">
-            <h1 class="date-notice">24 July</h1>
-            <p class="title-notice">&ThickSpace;&ThickSpace; Update: Your free trial of breathing has expired</p>
-        </div><br><br>
-        <div class="notice">
-            <h1 class="date-notice">24 July</h1>
-            <p class="title-notice">&ThickSpace;&ThickSpace; Update: Your free trial of breathing has expired</p>
-        </div><br><br>
-    </div>
-    <div class="assignments">
-        <p class="portal-heading">Assignments</p>
-        <div class="stat1">
-          <p class="stat1-data">140</p><br>
-          <p class="stat-name">To Be Completed</p>
-        </div>
-        <div class="stat1">
-          <p class="stat1-data">140</p><br>
-          <p class="stat-name">To Be Completed</p>
-        </div>
-        <div class="stat1">
-          <p class="stat1-data">140</p><br>
-          <p class="stat-name">To Be Completed</p>
-        </div>
-        <br>
-        <br>
-        <div class="homework"></div>
+            <h1 class="date-notice">{{ notices['date'] }}</h1>
+            <p class="title-notice">&ThickSpace;&ThickSpace; {{ notices['title'] }}</p>
+        </div></a><br><br>
+        {% endfor %}
     </div>
     <img src="{{url_for('static', filename='logo.svg')}}" alt="" style="position: fixed; bottom: 1em; right: 0em; max-width: 10em;">
 </body>

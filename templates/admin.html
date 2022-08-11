@@ -13,11 +13,13 @@
 <body style="background:url('/static/bgg.png') !important;">
   <h2 class="admin-head">Admin Portal</h2>
   <div class="admin-nav">
-    <a href="" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='notice.svg')}}" alt=""> Release New Notice</a><br><br>
-    <a href="" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='hw.svg')}}" alt=""> Post Homework</a><br><br>
-    <a href="" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='users.svg')}}" alt=""> Manage Users</a><br><br>
+    <a href="#notice" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='notice.svg')}}" alt=""> Release New Notice</a><br><br>
+    <a href="#hw" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='hw.svg')}}" alt=""> Post Homework</a><br><br>
+    <a href="#users" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='users.svg')}}" alt=""> Manage Users</a><br><br>
+    <a href="/logout" class="admin-navlink"><img class="admin-vector" src="{{url_for('static', filename='logout.svg')}}" alt=""> Logout</a><br><br>
   </div>
     <main class="admin-main">
+    <div class="admin-notice" id="notice">      
       <h1 class="admin-title">Release new notice</h1>
       <form action="" method="post"><br>
         <label for="title"class='admin-label'>Notice Title:</label><br>
@@ -26,8 +28,90 @@
         <textarea type="textbox" placeholder="Enter notice content" class="admin-input2" name="content"></textarea><br><br>
         <input class="vm" style="outline: none; border: none; max-width: 5em; max-height: 2.5em; float: right; margin-top: -2em; margin-right: 2em;" type="submit">
       </form>
-      <br><br><br>
-    </main>
+    </div>
+      <div class="admin-hw" id="hw">
+        <h1 class="admin-title">Post Homework</h1>
+        <form action="" method="post">
+          <label for="hw-title"class='admin-label'>Homework Title:</label><br>
+          <input type="text" placeholder="Enter homework title" class="admin-input hw-sub" name="hw-title"><br>
+          <label for="hw-sub"class='admin-label'>Subject:</label><br>
+          <input type="text" name="hw-sub" placeholder="Enter subject" class="admin-input hw-submit" style="display: inline-block; width: 20%;"><br><br>
+          <input type="submit" value="Assign" class="vm" style="outline: none; border: none; max-width: 5em; max-height: 2.5em; margin-top: 0em; margin-left: 5.3em;">
+        </form>
+      </div><br><br>
+      <div class="users" id="users">
+        <table style="overflow-x:visible;">
+          <tr>
+            <th class="manage-head">
+              ID
+            </th>
+            <th class="manage-head">
+              Admission No.
+            </th>
+            <th class="manage-head">
+              Password
+            </th>
+            <th class="manage-head">
+              Role
+            </th>
+            <th class="manage-head">
+              Name
+            </th>
+            <th class="manage-head">
+              Class
+            </th>
+            <th class="manage-head">
+              Section
+            </th>
+            <th class="manage-head">
+              <b>Manage</b>
+            </th>
+          </tr>
+          {% for data in data %}
+          <tr>
+            <td class="manage-head">
+              {{ data['id'] }}
+            </td>
+            <td class="manage-head">
+              {{ data['admno'] }}
+            </td>
+            <td class="manage-head">
+              {{ data['password'] }}
+            </td>
+            <td class="manage-head">
+              {{ data['role'] }}
+            </td>
+            <td class="manage-head">
+              {{ data['name'] }}
+            </td>
+            <td class="manage-head">
+              {{ data['class'] }}
+            </td>
+            <td class="manage-head">
+              {{ data['section'] }}
+            </td>
+            {% if data['role'] != 'admin' %}
+            <td class="manage-head">
+              <a href="/manage/{{ data['admno'] }}"><u>Manage</u></a>
+            </td>
+            {% else %}
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </table>
+        <div class="add">
+          <h1 class="admin-title">Add User</h1>
+          <form action="" method="post">
+            <input type="text" name="user-admno" placeholder="Enter Admission Number" class="admin-input cu" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+            <input type="text" name="user-pass" placeholder="Enter Password" class="admin-input cu" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+            <input type="text" name="user-name" placeholder="Enter Name" class="admin-input cu" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+            <input type="text" name="user-class" placeholder="Enter Class" class="admin-input cu" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+            <input type="text" name="user-section" placeholder="Enter Section" class="admin-input cu" style="display: inline-block; width: 40%; background: none; border: 1px black solid; color: black;"><br><br>
+            <input type="submit" value="Create User" class="vm" style="background: none; border: 1px solid black; color: black; margin-left: 5.2em;">
+          </form>
+        </div>
+      </div>
+    </main><br><br>
     <img src="{{url_for('static', filename='logo.svg')}}" alt="" style="position: fixed; top: 5em; right: 1em; max-width: 6em;">
 </body>
 </html>

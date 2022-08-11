@@ -90,9 +90,6 @@ hr{
   cursor:default;
 }
 
-.assignments{
-  margin-left: 6em;
-}
 
 .navlinks{
   transform: rotate(270deg);
@@ -166,6 +163,20 @@ a{
   border: 1px black solid;
 }
 
+.all-homeworks{
+  max-height: 35em;
+  overflow: scroll;
+}
+
+.homework{
+  width: 50em;
+  height: 8em;
+  border-radius: 1em;
+  margin-top: 1em;
+  background-color: black;
+  vertical-align: middle;
+}
+
 .date-notice{
   font-family: '2';
   font-size: 2em;
@@ -181,6 +192,26 @@ a{
 .title-notice{
   font-family: '1';
   font-size: 1.4em;
+  display: inline-block;
+}
+
+.date-hw{
+  font-family: '2';
+  font-size: 2em;
+  vertical-align: middle;
+  padding-top: calc(8em/6);
+  margin-left: 2em;
+  color: white;
+  border-right: 2px white solid !important;
+  display: inline-block;
+  padding-right: 2em;
+  height: 100%;
+}
+
+.title-hw{
+  font-family: '1';
+  font-size: 1.4em;
+  color: white;
   display: inline-block;
 }
 
@@ -269,10 +300,11 @@ a{
   overflow-x: hidden !important;
   overflow: scroll;
   border-radius: 1em;
+  margin-right: 1em;
   height: 30em;
   display: inline-block;
   margin-bottom: 1em;
-  width: 50em;
+  width: 45em;
   vertical-align: middle;
   padding: 1em 1em 1em 1em;
   background-color: #e2e2e2;
@@ -422,7 +454,7 @@ a:hover{
 }
 
 .toppers{
-  background-color: whitesmoke;
+  background-color: white;
   padding: 1em 1em 1em 1em;
 }
 
@@ -448,17 +480,17 @@ a:hover{
 
 .hqwe{
   position: absolute;
-  max-width: 4em;
-  margin-top: -6.5em;
+  max-width: 3em;
+  margin-top: -5em;
   z-index: 0;
   pointer-events: none;
   user-select: none;
-  margin-left: 12.5em;
+  margin-left: 7em;
 }
 
 .tpr{
   margin-left: 10em;
-  background-color: whitesmoke;
+  background-color: white;
   margin-top: 1em;
 }
 
@@ -466,7 +498,7 @@ a:hover{
   margin-right: 17em;
   padding-left: 40%;
   float: right;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .dn{
@@ -577,6 +609,15 @@ a:hover{
   font-weight:400;
 }
 
+.admin-navlink:hover{
+  text-decoration: none;
+  color: black;
+}
+a{
+  color: black !important;
+  text-decoration: none !important;
+}
+
 .admin-nav{
   width: 20%;
   height: 100%;
@@ -584,6 +625,10 @@ a:hover{
   overflow: none;
   margin-left: 1.5em;
   margin-right: 0;
+}
+
+.admin-notice{
+  height: 90%;
 }
 
 .admin-title{
@@ -613,11 +658,13 @@ a:hover{
   border: none;
 }
 
+
 .admin-input2{
   background-color: #0D0D0D;
   width: 70%;
   margin-left: 7em;
   height: 15em;
+  resize: none;
   font-family: '1';
   vertical-align: text-top;
   margin-top: 0.5em;
@@ -630,6 +677,13 @@ a:hover{
   outline: none;
   font-size: 1.2em;
   border: none;
+}
+
+.manage-head{
+  width: 13%;
+  font-size: 1.5em;
+  padding: 1em 2em 1em 2em;
+  text-align: center;
 }
 
 /* RESPONSIVE */
@@ -712,6 +766,8 @@ footer{
   margin-right: 7em;
 }
 
+
+
 @media screen and (max-width:540px){
   .nav-socials{
     margin-right:-6em;
@@ -754,3 +810,179 @@ footer{
     margin-right: 1em;
   }
 }
+
+@media screen and (max-width: 740px){
+  .nutimg{
+    max-width: 50em;
+  }
+}
+
+@media screen and (max-width: 530px){
+  .nutimg{
+    max-width: 40em;
+  }
+}
+
+@media screen and (max-width:620px) {
+  .tpr{
+    width: 100%;
+  }
+  .tpr2{
+  margin-right: 0em;
+  padding-left: 0;
+  margin-left: 10em;
+  margin-bottom: 4em;
+  width: 100%;
+  float: left;
+  }
+}
+
+@media screen and (max-width:625px) {
+   .logo2{
+    display: block;
+    float: left;
+    position: relative;
+   }
+   .ftxt{
+    position: relative;
+   }
+}
+
+@media screen and (max-width:569px) {
+  .logo2{
+    width: 100% !important;
+  }
+  .dn{
+    display: none;
+  }
+}
+
+@media screen and (max-width:1228px){
+  .assignments{
+    width: 100em;
+    display: block;
+  }
+  .all-homeworks{
+    width: 100em;
+  }
+}
+
+@media screen and (max-width:788px) {
+  .notice{
+    width: 60em;
+  }
+}
+
+@media screen and (max-width:676px) {
+  .notice{
+    width: 50em;
+  }
+}
+
+@media screen and (max-width:582px) {
+  .notice{
+    width: 40em;
+    height: 10em;
+  }
+  .title-notice{
+    display: inline-block;
+    word-wrap:break-word !important;
+  }
+  .date-notice{
+    display: inline-block;
+    border-left: none;
+  }
+}
+
+@media screen and (max-width:602px) {
+  .notice{
+    width: 40em;
+  }
+  .homework{
+    width: 40em;
+  }
+}
+
+@media screen and (max-width:1276px) {
+  .inpoot{
+    width: 30em;
+    margin-left: 1em;
+  }
+  .label{
+    margin-left: 1em;
+  }
+}
+
+
+@media screen and (max-width:670px) {
+  .inpoot{
+    width: 30em;
+    margin-left: -4em;
+  }
+  .label{
+    margin-left: -4em;
+  }
+  .eljogus{
+    position: absolute !important;
+    left: 50% !important;
+    z-index: -1 !important;
+    display: none !important;
+    top: 1% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media screen and (max-width:1167px) {
+  .admin-main{
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: BLOCK;
+    top: 40em;
+    bottom: 2em;
+  }
+  .admin-nav{
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width:972px) {
+  .hw-submit{
+    width:50% !important;
+
+  }
+}
+
+@media screen and (max-width:882px) {
+  .hw-submit{
+    width:80% !important;
+    
+  }
+  .hw-sub{
+    width:80% !important;
+    
+  }
+}
+
+@media screen and (max-width:968px) {
+  .cu{
+    width: 85% !important;
+  }
+}
+@media screen and (max-width:699px) {
+  .cu{
+    width: 75% !important;
+  }
+}
+
+
+/* 
+.admin-nav{
+  width: 20%;
+  height: 100%;
+  margin-top: 8em;
+  overflow: none;
+  margin-left: 1.5em;
+  margin-right: 0;
+} */
