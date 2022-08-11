@@ -12,6 +12,7 @@ Agar koi features miss hogye to dm
 You may miss:
 1. Every notice seprate page
 2. Every user management page
+3. Btw most of the website is in portal only
 
 Database Setup:
 1. Schema Name- projectbeta
@@ -21,3 +22,9 @@ Database Setup:
 Tables Setup:
 see /static/setup
 All files required are there
+
+Live; http://projectbeta.pythonanywhere.com/admin
+
+Admin account with which u can do anything
+admission number: 00
+password: admien
