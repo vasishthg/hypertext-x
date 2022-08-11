@@ -23,7 +23,7 @@ Tables Setup:
 see /static/setup
 All files required are there
 
-Live; http://projectbeta.pythonanywhere.com/admin
+Live; http://projectbeta.pythonanywhere.com/
 
 Admin account with which u can do anything
 admission number: 00
