@@ -25,6 +25,6 @@ All files required are there
 
 Live; http://projectbeta.pythonanywhere.com/
 
-Admin account with which u can do anything
-admission number: 00
+Admin account with which u can do anything <br>
+admission number: 00<br>
 password: admien
